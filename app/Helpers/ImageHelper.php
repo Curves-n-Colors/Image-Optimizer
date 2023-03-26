@@ -42,7 +42,6 @@ class ImageHelper{
 
     public function compress_jpg($quality)
     {
-        $this->image->writeImage("new.jpg");
         $this->image->stripImage();
         $this->image->setImageCompression(\Imagick::COMPRESSION_LOSSLESSJPEG);
         $this->image->setImageCompressionQuality($quality);
