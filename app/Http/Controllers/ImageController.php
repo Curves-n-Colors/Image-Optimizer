@@ -35,7 +35,7 @@ class ImageController extends Controller
             return back()->with('error', 'Image uploaded Failed!');
         }
 
-        //For Compressing images PNG AND JPG
+        //For Converting images PNG AND JPG to WEBP
         if ($image->convert_to_webp()) {
             return back()->with('success', 'Image uploaded Successfully and converted!');
         } else {
