@@ -16,7 +16,7 @@ Change .env.exammple to .env and open console to enter following command.
 ### Step 2
 Check for Imagick and ImageMagick extesnion is installed using phpinfo().
 If not installed install Imagick and ImageMagick using the given [link](https://phpandmysql.com/extras/install-imagemagick-and-imagick-xampp/).
-
+[link for Ubuntu] (https://linuxopsys.com/topics/install-imagick-on-ubuntu)
 
 
 ## Way to use 

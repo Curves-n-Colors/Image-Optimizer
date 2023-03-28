@@ -21,11 +21,20 @@ class ImageController extends Controller
             'image' => 'required|image|mimes:png,jpg,jpeg'
         ]);
         $fileName = $request->image->getClientOriginalName();
+        if (!file_exists(public_path('images'))) {
+            mkdir(public_path('images'), 0755, true);
+       }
+       
         $request->image->move(public_path('images'), $fileName);
-        $path = public_path('images') . '\\' . $fileName;
+        if(PHP_OS=='WINNT'){
+            $path = public_path('images') . '\\' . $fileName;
+        }else{
+            $path = public_path('images') . '/' . $fileName;
+        }
 
         //Compression of recentily uploaded File
         $image_path = realpath($path);
+        // dd( $path);
         $image = new ImageHelper($image_path);
        
         //For Compressing images PNG AND JPG
